@@ -18,6 +18,12 @@ Then in your Android project create the layout for the scan-view which can be as
     </FrameLayout>
 </FrameLayout>
 
+In your AndroidManifest.xml you will need to allow camera-use:
+
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-feature android:name="android.hardware.camera" />
+<uses-feature android:name="android.hardware.camera.autofocus" />
+
 Then in your scan-activity you can use it as simply as:
 
 public class ScanActivity extends Activity

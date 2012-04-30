@@ -97,6 +97,11 @@ public class SimpleCameraReader
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		catch (Exception e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		if (formats == null || formats.size() <= 0)
 			formats = QRFormatCodes.ALL_FORMATS;
