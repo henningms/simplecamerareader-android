@@ -47,6 +47,7 @@ public final class SimpleCameraHandler extends Handler {
 	  {
 		  MessageCode mc = MessageCode.toM(message.what);
 		  
+		  
 	    switch (mc) {
 	    	case AUTO_FOCUS:
 	    		if (state == State.PREVIEW)

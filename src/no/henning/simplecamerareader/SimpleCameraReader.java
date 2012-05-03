@@ -108,6 +108,8 @@ public class SimpleCameraReader
 		
 		handler = new SimpleCameraHandler(this, formats, null, cameraManager);
 		
+		
+		
 		//vv.setCameraManager(cameraManager);
 	}
 	
@@ -125,6 +127,13 @@ public class SimpleCameraReader
 	public void setViewFinder(ViewfinderView vv)
 	{
 		this.vv = vv;
+	}
+	
+	public void restartDecodingProcess()
+	{
+		if (handler == null) return;
+		
+		handler.sendEmptyMessage(MessageCode.RESTART_PREVIEW.ordinal());
 	}
     
 	/**
