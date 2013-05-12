@@ -1,4 +1,8 @@
-﻿bin/
+bin/
 gen/
 .git/
 .settings/
+.idea/
+target/
+
+*.iml
