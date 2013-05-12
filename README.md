@@ -3,29 +3,34 @@ How to use:
 First build the project and reference the jar (or project) in your Android project.
 Then in your Android project create the layout for the scan-view which can be as easy as:
 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
+    android:orientation="vertical"
     >
-    
+
     <FrameLayout
         android:id="@+id/cameraview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
-        
+
     </FrameLayout>
 </FrameLayout>
+```
 
 In your AndroidManifest.xml you will need to allow camera-use:
 
+```xml
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
+```
 
 Then in your scan-activity you can use it as simply as:
 
+```java
 public class ScanActivity extends Activity
 {
 	private SimpleCameraReader camera;
@@ -35,7 +40,7 @@ public class ScanActivity extends Activity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.scan_layout);
 
 		try
@@ -76,7 +81,7 @@ public class ScanActivity extends Activity
 				// We don't really have to do anything here
 				public void onError(Exception ex)
 				{
-				
+
 				}
 			});
 		}
@@ -105,16 +110,27 @@ public class ScanActivity extends Activity
 	public void onPause()
 	{
 		super.onPause();
-		
+
 		// When the activity pauses/stops
 		// stop the camera
 		camera.stop();
 	}
 }
+```
+
+To use it as a maven dependency, just add
+```xml
+<groupId>no.henning</groupId>
+<artifactId>simple-camera-reader</artifactId>
+<version>1.0</version>
+<type>apklib</type>
+```
+
+To your pom.
 
 --------------------------------------------------------
 
-Copyright [2012] [Henning Mosand Stephansen]
+Copyright [2012, 2013] [Henning Mosand Stephansen]
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
