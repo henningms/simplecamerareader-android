@@ -1,4 +1,4 @@
-package no.henning.simplecamerareader;
+package com.github.henningms.simplecamerareader;
 
 import android.hardware.Camera;
 import android.os.Handler;

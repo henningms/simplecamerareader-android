@@ -1,7 +1,6 @@
-package no.henning.simplecamerareader.util.timer;
+package com.github.henningms.simplecamerareader.util.timer;
 
 import android.os.Handler;
-import android.util.Log;
 
 public class SimpleTimer
 {
@@ -11,7 +10,7 @@ public class SimpleTimer
 	private Runnable checkTimer;
 	private long startTime = 0L;
 	private boolean cancel = false;
-	
+
 	private long timeToCheck = 10L;
 
 	public SimpleTimer()
@@ -38,11 +37,11 @@ public class SimpleTimer
 
 	/**
 	 * start()
-	 * 
+	 *
 	 * Starts the timer
 	 */
 	public void start()
-	{		
+	{
 		if (handler == null) return;
 		if (onTickEvent == null) return;
 		if (checkTimer == null) return;
@@ -54,7 +53,7 @@ public class SimpleTimer
 		reset();
 
 		startTime = System.currentTimeMillis();
-		
+
 		handler.removeCallbacks(checkTimer);
 		handler.postDelayed(checkTimer, timeToCheck);
 
@@ -63,9 +62,9 @@ public class SimpleTimer
 
 	/**
 	 * stop()
-	 * 
+	 *
 	 * Stops the timer
-	 * 
+	 *
 	 * TODO: Timer will keep on going until it's stopped, even if app "closes"
 	 */
 	public void stop()
@@ -79,7 +78,7 @@ public class SimpleTimer
 
 	/**
 	 * reset()
-	 * 
+	 *
 	 * Reset timer
 	 */
 	private void reset()
@@ -89,7 +88,7 @@ public class SimpleTimer
 
 	/**
 	 * runCheck()
-	 * 
+	 *
 	 * Our internal tick routine.
 	 * Checks to see if our interval has been hit.
 	 */
@@ -101,14 +100,14 @@ public class SimpleTimer
 		long start = startTime;
 		long areWeThereYet = System.currentTimeMillis() - start;
 		long theAnswer = interval.getMillis();
-		
+
 		// Are we there yet?
 		if (areWeThereYet >= theAnswer)
 		{
 			// We're here! Call users handler onTick event
 			startTime = System.currentTimeMillis();
 
-			onTickEvent.onTick();	
+			onTickEvent.onTick();
 		}
 
 		// Remove all callbacks and start timer again :)

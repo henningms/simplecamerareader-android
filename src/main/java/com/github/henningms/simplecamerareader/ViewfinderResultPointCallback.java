@@ -1,4 +1,4 @@
-package no.henning.simplecamerareader;
+package com.github.henningms.simplecamerareader;
 
 import com.google.zxing.ResultPoint;
 import com.google.zxing.ResultPointCallback;

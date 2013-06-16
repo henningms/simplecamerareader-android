@@ -1,4 +1,4 @@
-package no.henning.simplecamerareader;
+package com.github.henningms.simplecamerareader;
 
 import java.lang.reflect.Method;
 import java.util.Collection;
@@ -75,7 +75,7 @@ final class CameraConfigurationManager
 		/*
 		 * SharedPreferences prefs =
 		 * PreferenceManager.getDefaultSharedPreferences(context);
-		 * 
+		 *
 		 * initializeTorch(parameters, prefs); String focusMode =
 		 * findSettableValue(parameters.getSupportedFocusModes(),
 		 * Camera.Parameters.FOCUS_MODE_AUTO,
@@ -86,7 +86,7 @@ final class CameraConfigurationManager
 		parameters.setPreviewSize(cameraResolution.x, cameraResolution.y);
 		parameters.set("orientation", "portrait");
 		parameters.setRotation(90);
-		
+
 		setDisplayOrientation(camera, 90);
 		camera.setParameters(parameters);
 	}
@@ -111,7 +111,7 @@ final class CameraConfigurationManager
 	 * editor = prefs.edit();
 	 * editor.putBoolean(PreferencesActivity.KEY_FRONT_LIGHT, newSetting);
 	 * editor.commit(); } }
-	 * 
+	 *
 	 * private static void initializeTorch(Camera.Parameters parameters,
 	 * SharedPreferences prefs) { boolean currentSetting =
 	 * prefs.getBoolean(PreferencesActivity.KEY_FRONT_LIGHT, false);
@@ -136,9 +136,9 @@ final class CameraConfigurationManager
 				.getSupportedPreviewSizes();
 
 		//Camera.Size sp = supportedPreviewSizes.get(supportedPreviewSizes.size() - 1);
-		
+
 		//return new Point(sp.width, sp.height);
-		
+
 		if (Log.isLoggable(TAG, Log.INFO))
 		{
 			StringBuilder previewSizesString = new StringBuilder();
@@ -152,7 +152,7 @@ final class CameraConfigurationManager
 		}
 
 		for (Camera.Size supportedPreviewSize : supportedPreviewSizes)
-		
+
 		{
 			int realWidth = supportedPreviewSize.width;
 			int realHeight = supportedPreviewSize.height;
@@ -166,7 +166,7 @@ final class CameraConfigurationManager
 					: realWidth;
 			int maybeFlippedHeight = isCandidatePortrait ? realWidth
 					: realHeight;*/
-			
+
 			if (realWidth == screenResolution.x
 					&& realHeight == screenResolution.y)
 			{
@@ -191,7 +191,7 @@ final class CameraConfigurationManager
 					: realWidth;
 			int maybeFlippedHeight = isCandidatePortrait ? realWidth
 					: realHeight;*/
-			
+
 			int newDiff = Math.abs(screenResolution.x * realWidth
 					- screenResolution.y * realHeight);
 			if (newDiff == 0)

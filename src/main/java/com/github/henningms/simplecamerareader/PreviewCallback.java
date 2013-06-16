@@ -1,4 +1,4 @@
-package no.henning.simplecamerareader;
+package com.github.henningms.simplecamerareader;
 
 import android.graphics.Point;
 import android.hardware.Camera;
@@ -31,7 +31,7 @@ final class PreviewCallback implements Camera.PreviewCallback {
 	          cameraResolution.y, data);
 	      message.sendToTarget();
 	      previewHandler = null;
-	      
+
 	    } else {
 	      Log.d(TAG, "Got preview callback, but no handler for it");
 	    }
