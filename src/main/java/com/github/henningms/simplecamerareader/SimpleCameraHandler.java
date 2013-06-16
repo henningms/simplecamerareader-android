@@ -1,4 +1,4 @@
-package no.henning.simplecamerareader;
+package com.github.henningms.simplecamerareader;
 
 import java.util.Collection;
 
@@ -43,11 +43,11 @@ public final class SimpleCameraHandler extends Handler {
 	  }
 
 	  @Override
-	  public void handleMessage(Message message) 
+	  public void handleMessage(Message message)
 	  {
 		  MessageCode mc = MessageCode.toM(message.what);
-		  
-		  
+
+
 	    switch (mc) {
 	    	case AUTO_FOCUS:
 	    		if (state == State.PREVIEW)

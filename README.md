@@ -120,8 +120,8 @@ public class ScanActivity extends Activity
 
 To use it as a maven dependency, just add
 ```xml
-<groupId>no.henning</groupId>
-<artifactId>simple-camera-reader</artifactId>
+<groupId>com.github.henningms</groupId>
+<artifactId>simple-camera-reader-android</artifactId>
 <version>1.0</version>
 <type>apklib</type>
 ```

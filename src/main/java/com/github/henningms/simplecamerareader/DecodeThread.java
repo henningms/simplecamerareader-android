@@ -1,4 +1,4 @@
-package no.henning.simplecamerareader;
+package com.github.henningms.simplecamerareader;
 
 import java.util.Collection;
 import java.util.EnumMap;
@@ -7,7 +7,6 @@ import java.util.concurrent.CountDownLatch;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
-import com.google.zxing.ResultPointCallback;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -29,13 +28,13 @@ final class DecodeThread extends Thread {
 	    handlerInitLatch = new CountDownLatch(1);
 
 	    hints = new EnumMap<DecodeHintType,Object>(DecodeHintType.class);
-	 
+
 	    hints.put(DecodeHintType.POSSIBLE_FORMATS, decodeFormats);
 
 	    if (characterSet != null) {
 	      hints.put(DecodeHintType.CHARACTER_SET, characterSet);
 	    }
-	    
+
 	    if (resultPointCallback != null)
 	    	hints.put(DecodeHintType.NEED_RESULT_POINT_CALLBACK, resultPointCallback);
 	  }

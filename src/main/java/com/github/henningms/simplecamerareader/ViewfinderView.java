@@ -1,10 +1,9 @@
-package no.henning.simplecamerareader;
+package com.github.henningms.simplecamerareader;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -19,7 +18,7 @@ import com.google.zxing.ResultPoint;
  * This view is overlaid on top of the camera preview. It adds the viewfinder
  * rectangle and partial transparency outside it, as well as the laser scanner
  * animation and result points.
- * 
+ *
  * @author dswitkin@google.com (Daniel Switkin)
  */
 public final class ViewfinderView extends View
@@ -181,7 +180,7 @@ public final class ViewfinderView extends View
 	/**
 	 * Draw a bitmap with the result points highlighted instead of the live
 	 * scanning display.
-	 * 
+	 *
 	 * @param barcode
 	 *            An image of the decoded barcode.
 	 */

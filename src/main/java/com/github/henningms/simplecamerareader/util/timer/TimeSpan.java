@@ -1,4 +1,4 @@
-package no.henning.simplecamerareader.util.timer;
+package com.github.henningms.simplecamerareader.util.timer;
 
 import java.util.Calendar;
 import java.util.Date;

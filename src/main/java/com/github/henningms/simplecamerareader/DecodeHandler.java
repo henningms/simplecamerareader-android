@@ -1,10 +1,8 @@
-package no.henning.simplecamerareader;
+package com.github.henningms.simplecamerareader;
 
 import java.util.Map;
-import java.util.Stack;
 
-import no.henning.simplecamerareader.interfaces.CameraHandler;
-import no.henning.simplecamerareader.util.PlanarYUVLuminanceSource;
+import com.github.henningms.simplecamerareader.util.PlanarYUVLuminanceSource;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,13 +12,12 @@ import android.util.Log;
 
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
-import com.google.zxing.LuminanceSource;
 import com.google.zxing.MultiFormatReader;
 import com.google.zxing.ReaderException;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 
-final class DecodeHandler extends Handler 
+final class DecodeHandler extends Handler
 {
 	  private static final String TAG = DecodeHandler.class.getSimpleName();
 
@@ -35,15 +32,15 @@ final class DecodeHandler extends Handler
 	  }
 
 	  @Override
-	  public void handleMessage(Message message) 
+	  public void handleMessage(Message message)
 	  {
-	    if (!running) 
-	    { 
+	    if (!running)
+	    {
 	      return;
 	    }
-	    
+
 	    MessageCode mc = MessageCode.toM(message.what);
-	    
+
 	    switch (mc)
 	    {
 	      case DECODE:
@@ -81,7 +78,7 @@ final class DecodeHandler extends Handler
 	    }
 
 	    Handler handler = scr.getHandler();
-	    if (rawResult != null) 
+	    if (rawResult != null)
 	    {
 	      // Don't log the barcode contents for security.
 	      long end = System.currentTimeMillis();
@@ -93,10 +90,10 @@ final class DecodeHandler extends Handler
 	        message.setData(bundle);
 	        message.sendToTarget();
 	      }
-	    } 
-	    else 
+	    }
+	    else
 	    {
-	      if (handler != null) 
+	      if (handler != null)
 	      {
 	        Message message = Message.obtain(handler, 3);
 	        message.sendToTarget();

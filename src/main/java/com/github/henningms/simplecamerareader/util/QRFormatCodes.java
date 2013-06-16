@@ -1,4 +1,4 @@
-package no.henning.simplecamerareader.util;
+package com.github.henningms.simplecamerareader.util;
 
 import java.util.Collection;
 import java.util.EnumSet;
@@ -12,22 +12,22 @@ public class QRFormatCodes
 	public static final Collection<BarcodeFormat> QR_CODE_FORMATS = EnumSet.of(BarcodeFormat.QR_CODE);
 	public static final Collection<BarcodeFormat> DATA_MATRIX_FORMATS = EnumSet.of(BarcodeFormat.DATA_MATRIX);
 	public static final Collection<BarcodeFormat> ALL_FORMATS;
-	
+
 	static {
-		PRODUCT_FORMATS = EnumSet.of(BarcodeFormat.UPC_A,                
+		PRODUCT_FORMATS = EnumSet.of(BarcodeFormat.UPC_A,
 				BarcodeFormat.UPC_E,
                 BarcodeFormat.EAN_13,
                 BarcodeFormat.EAN_8,
                 BarcodeFormat.RSS_14);
-		
+
 		ONE_D_FORMATS = EnumSet.of(BarcodeFormat.CODE_39,
                 BarcodeFormat.CODE_93,
                 BarcodeFormat.CODE_128,
                 BarcodeFormat.ITF,
                 BarcodeFormat.CODABAR);
-		
+
 		ONE_D_FORMATS.addAll(PRODUCT_FORMATS);
-		
+
 		ALL_FORMATS = EnumSet.of(
 				BarcodeFormat.AZTEC,
 				BarcodeFormat.CODABAR,

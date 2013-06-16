@@ -2,17 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>no.henning</groupId>
-    <artifactId>simple-camera-reader</artifactId>
+    <groupId>com.github.henningms</groupId>
+    <artifactId>simple-camera-reader-android</artifactId>
     <version>1.0</version>
     <packaging>apklib</packaging>
-    <name>simple-camera-reader</name>
+    <name>simple-camera-reader-andorid</name>
+
+    <prerequisites>
+        <maven>3.0.3</maven>
+    </prerequisites>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <platform.version>2.1.2</platform.version>
+        <platform.version>4.1.1.4</platform.version>
         <sdk.platform.version>7</sdk.platform.version>
-        <android.plugin.version>3.5.3</android.plugin.version>
+        <zxing.version>2.2</zxing.version>
+        <android.plugin.version>3.6.0</android.plugin.version>
+        <maven-javadoc.version>2.9</maven-javadoc.version>
+        <maven-source.version>2.2.1</maven-source.version>
     </properties>
 
     <dependencies>
@@ -25,7 +32,7 @@
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
-            <version>2.0</version>
+            <version>${zxing.version}</version>
         </dependency>
     </dependencies>
 
@@ -41,6 +48,32 @@
                         <platform>${sdk.platform.version}</platform>
                     </sdk>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

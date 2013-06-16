@@ -1,8 +1,8 @@
-package no.henning.simplecamerareader;
+package com.github.henningms.simplecamerareader;
 
 import java.io.IOException;
 
-import no.henning.simplecamerareader.util.PlanarYUVLuminanceSource;
+import com.github.henningms.simplecamerareader.util.PlanarYUVLuminanceSource;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -57,11 +57,11 @@ public final class CameraManager
 
 	/**
 	 * Opens the camera driver and initializes the hardware parameters.
-	 * 
+	 *
 	 * @param holder
 	 *            The surface object which the camera will draw preview frames
 	 *            into.
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	public void openDriver(SurfaceHolder holder, int width, int height)
 			throws Exception
@@ -150,7 +150,7 @@ public final class CameraManager
 	 * A single preview frame will be returned to the handler supplied. The data
 	 * will arrive as byte[] in the message.obj field, with width and height
 	 * encoded as message.arg1 and message.arg2, respectively.
-	 * 
+	 *
 	 * @param handler
 	 *            The handler to send the message to.
 	 * @param message
@@ -168,7 +168,7 @@ public final class CameraManager
 
 	/**
 	 * Asks the camera hardware to perform an autofocus.
-	 * 
+	 *
 	 * @param handler
 	 *            The Handler to notify when the autofocus completes.
 	 * @param message
@@ -197,7 +197,7 @@ public final class CameraManager
 	 * where to place the barcode. This target helps with alignment as well as
 	 * forces the user to hold the device far enough away to ensure the image
 	 * will be in focus.
-	 * 
+	 *
 	 * @return The rectangle to draw on screen in window coordinates.
 	 */
 	public Rect getFramingRect()
@@ -265,7 +265,7 @@ public final class CameraManager
 	/**
 	 * Allows third party apps to specify the scanning rectangle dimensions,
 	 * rather than determine them automatically based on screen resolution.
-	 * 
+	 *
 	 * @param width
 	 *            The width in pixels to scan.
 	 * @param height
@@ -301,7 +301,7 @@ public final class CameraManager
 	/**
 	 * A factory method to build the appropriate LuminanceSource object based on
 	 * the format of the preview buffers, as described by Camera.Parameters.
-	 * 
+	 *
 	 * @param data
 	 *            A preview frame.
 	 * @param width
