@@ -1,6 +1,7 @@
 How to use:
 
 First build the project and reference the jar (or project) in your Android project.
+The easiest way to build is to use gradle, just run ``./gradlew assemble``
 Then in your Android project create the layout for the scan-view which can be as easy as:
 
 ```xml
@@ -118,12 +119,23 @@ public class ScanActivity extends Activity
 }
 ```
 
+To use it as a Gradle-dependency, just add
+```groovy
+compile('com.github.henningms:simplecamerareader-android:1.0@aar') {
+    transitive = true
+}
+```
+
+To your build.gradle
+
 To use it as a maven dependency, just add
 ```xml
-<groupId>no.henning</groupId>
-<artifactId>simple-camera-reader</artifactId>
-<version>1.0</version>
-<type>apklib</type>
+<dependency>
+	<groupId>com.github.henningms</groupId>
+	<artifactId>simplecamerareader-android</artifactId>
+	<version>1.0</version>
+	<type>aar</type>
+</dependency>
 ```
 
 To your pom.
