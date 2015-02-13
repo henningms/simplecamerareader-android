@@ -231,3 +231,6 @@ target/
 
 *.iml
 
+atlassian-ide-plugin.xml
+
+.gradle/
